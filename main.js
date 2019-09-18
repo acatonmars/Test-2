@@ -58,21 +58,97 @@ Table of Contents
 /***********************
 Pause and Play Alternate
 ************************/
+const playFunctions = {
+  play: 'assets/images/play.svg',
+  pause: 'assets/images/pause.svg'
+}
+
+// const play = document.getElementById('p');
 const playButton = document.getElementById('play_button');
 const pauseButton = document.getElementById('pause_button');
 
+// function switchImage() {
+//     if (play.src.endsWith(playFunctions.pause)) {
+//         play.src = playFunctions.play;
+//     } else {
+//         play.src = playFunctions.pause;
+//     }
+// }
+
 function play() {
-    playButton.style.display = 'none';
-    pauseButton.style.display = 'block';
+  playButton.style.display = 'none';
+  pauseButton.style.display = 'block';
 }
 
 function pause() {
-    playButton.style.display = 'block';
-    pauseButton.style.display = 'none';
+  playButton.style.display = 'block';
+  pauseButton.style.display = 'none';
 }
 
+
 /***********************
-    Event Listeners
+  Event Listeners
 ************************/
-playButton.addEventListener('click', play);
-pauseButton.addEventListener('click', pause);
+// play.addEventListener('click', switchImage)
+playButton.addEventListener('click', play)
+pauseButton.addEventListener('click', pause)
+
+
+/*
+let i = 0
+    an object {
+        img1: './assets/images/play.svg',
+        img2: './assets/images/pause.svg'
+
+    }
+    i += 1
+    i -= 1
+ */
+
+
+// function switchThis(type) {
+//     return play.src = type;
+// }
+
+// function foo() {
+
+// }
+
+// switchThis(playImages[image1]);
+
+
+// http://jsfiddle.net/cCvtL/1/
+
+let sideMenu = document.querySelector(".side-menu")
+let closeButton = document.querySelector(".close")
+let settings = document.querySelector(".settings")
+
+let mainOptions = document.querySelector(".main__options")
+let closetwo = document.querySelector(".close2")
+
+let feather = document.querySelector(".feather-menu")
+
+
+
+function slide() {
+  sideMenu.style.setProperty("right", "50%")
+}
+
+function close() {
+  sideMenu.style.setProperty("right", "100%")
+}
+
+function appear() {
+  mainOptions.style.setProperty("display", "block")
+  mainOptions.style.setProperty("top", 0)
+}
+
+function a() {
+  mainOptions.style.setProperty("top", "100%")
+}
+
+feather.addEventListener("click", slide)
+closeButton.addEventListener("click", close)
+settings.addEventListener("click", close)
+settings.addEventListener("click", appear)
+closetwo.addEventListener("click", a)
