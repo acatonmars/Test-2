@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Pomotroid</title>
+
+        <!-- Links -->
+        <link href="https://fonts.googleapis.com/css?family=Quicksand:400,500,700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./assets/css/main.css">
+        <link rel="stylesheet" href="./assets/css/settings.css">
+    </head>
+    <body>
+
+        <div class="wrapper">
+
+            <!-- Header -->
+            <header class="header">
+                <nav class="header__nav">
+                    <!-- Menu bar TODO -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 17 17" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                        <line x1="3" y1="12" x2="14" y2="12"></line>
+                        <line x1="3" y1="6" x2="25" y2="6"></line>
+                    </svg>
+                    <a class="header__promo" href="#pomotroid">Pomotroid</a>
+                    <object type='image/svg+xml' data='assets/images/settings.svg' class='settings_icon'>
+                        Settings
+                    </object>
+                </nav>
+            </header>
+
+            <!-- Clock and Time details -->
+            <main class="main">
+                <div class="main__circle">
+
+                    <div class="circle__details">
+                        <div class="clock__time">18:24</div>
+                        <div class="clock__text">Work</div>
+                    </div>
+
+                    <svg width="160" height="160"  stroke-linecap="round" xmlns="http://www.w3.org/2000/svg">
+                        <g><circle id="circle" class="circle_animation" r="85" cy="81" cx="81" stroke-width="8" stroke="#F55151" fill="none"/></g>
+                    </svg>
+                </div>
+
+                <div class="main__pause">
+                        <!-- <img id="p" src="./assets/images/pause.svg" /> -->
+                        <svg id="play_button" class="action_button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M96 52v408l320-204L96 52z"/></svg>
+                        <svg id="pause_button" class="action_button" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 22 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-pause"><rect x="6" y="4" width="2" height="16"></rect><rect x="14" y="4" width="2" height="16"></rect></svg>
+                </div>
+            </main>
+
+            <!-- Resets, Skips, and Sound options -->
+            <footer class="footer">
+                <div class="footer__round-details">
+                    <div class="round-details__rounds">1/4</div>
+                    <div class="round-details__reset">Reset</div>
+                </div>
+
+                <div class="sounds">
+                    <svg class="sounds__skip" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 512 512"><path d="M64 64v384l277.3-192L64 64zM384 64h64v384h-64z"/></svg>
+                    <svg class="sounds__headphone" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-headphones"><path d="M3 18v-6a9 9 0 0 1 18 0v6"></path><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path></svg>
+                    <audio controls>
+                        <source src="./assets/audio/relaxing-rain.mp3">
+                        <source src="./assets/audio/flute.mp3">
+                        <source src="./assets/audio/festival.mp3">
+                    </audio>
+                </div>
+            </footer>
+        </div>
+
+        <!-- Settings page -->
+        <main class='main__options'>
+            <header class="header__settings">
+                <nav class="header__settings__nav">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+                        <line x1="3" y1="12" x2="13" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                    </svg>
+                    <a class="header__promo" href="#">Pomotroid</a>
+                    <a href='https://github.com/anthonygedeon/pomodoro'><h3 class='team_title'>Courtesy the JASM crew!</h3></a>
+                </nav>
+            </header>
+
+            <div class="option__sliders">
+                <div class='option__slider_section'>
+                    <label for="work"  class='option__section'>Work</label>
+                    <p><span>%25%</span>00</p>
+                    <input type="range" id="work" step="5" min="0" max="60" />
+                </div>
+                <div class='option__slider_section'>
+                    <label for="short_break" class='option__section'>Short Break</label>
+                    <p><span>%5%</span>00</p>
+                    <input type="range" id="short_break" step="1" min="0" max="15">
+                </div>
+                <div class='option__slider_section'>
+                    <label for="long_break" class='option__section'>Long Break</label>
+                   <p><span>%15%</span>00</p>
+                    <input type="range" id="long_break" step="5" min="0" max="60">
+                </div>
+                <div class='option__slider_section'>
+                    <label for="work" class='option__section'>Rounds</label>
+                    <p><span>%25%</span>00</p>
+                    <input type="range" id="work" step="1" min="1" max="10">
+                </div>
+                <h3 class="option__restart">Restore Defaults</h3>
+            </div>
+        </main>
+
+        <!-- Scripts -->
+        <script src="./assets/scripts/main.js"></script>
+        <script src='./assets/scripts/options.js'></script>
+    </body>
+</html>

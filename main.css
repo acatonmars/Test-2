@@ -1,0 +1,262 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+:root{
+    /* Fonts */
+    --primary-font: 'Quicksand', sans-serif;
+
+    /* Colors */
+    --background: #30394B;
+    --work:  #F55151;
+    --long-break: ;
+    --short-break: #07E98B;
+    --accents: #F8F6F3;
+    --little-details: #E3E1DE;
+    --faded-ring: hsla(36, 8%, 88%, 0.178);
+
+    /* App */
+    --app-width: 260px;
+    --app-height: 350px;
+}
+
+html {
+    background-color: #000000;
+}
+
+/*************************
+    Basic Styles
+**************************/
+
+.wrapper {
+    width: var(--app-width);
+    height: var(--app-height);
+    background-color: var(--background);
+    padding: 8px 4px 2px 4px;
+    margin: 5% auto;
+    border: 1px solid rgb(32, 32, 32);
+    box-shadow: 0 2px 10px rgba(165, 165, 165, 0.411);
+    position: relative;
+}
+
+/*************************
+    Nav Styles
+**************************/
+.header__nav {
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}
+
+.header__nav svg {
+    stroke: var(--accents);
+    cursor: pointer;
+}
+
+.header__promo {
+    color: var(--short-break);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    justify-self: center;
+}
+.settings_icon {
+    justify-self: right;
+}
+
+/*************************
+    Clock Styles
+**************************/
+.main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 10% auto;
+}
+
+.main__circle {
+    border: 2px solid var(--faded-ring);
+    border-radius: 50%;
+    width: 170px;
+    height: 170px;
+    position: relative;
+}
+
+.circle__details {
+    width: 100%;
+    height: 28vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock__time {
+    font-size: 40px;
+    color: var(--little-details);
+    letter-spacing: .2rem;
+}
+
+.clock__text {
+    padding-top: 5px;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--little-details);
+    text-transform: uppercase;
+}
+
+.main__circle svg {
+    transform: rotate(270deg);
+    overflow: visible;
+    position: absolute;
+    bottom: 1px;
+}
+
+.circle_animation {
+    stroke-dasharray: 540; /* this value is the pixel circumference of the circle */
+    stroke-dashoffset: 540;
+}
+
+/*
+    Converting Minutes to Seconds
+    Multiply the number of minutes by 60.
+        Ex. 1. 25 Minutes * 60 = 1500s
+            2. 15 Minutes * 60 = 900s
+            3. 5 Minutes * 60 = 300s
+ */
+.circle_animation {
+    animation: countdown 1500s linear forwards;
+    /* 25 minutes is 1500s */
+    /* 15 mintues is 900s */
+    /* 5 minutes is 300s */
+}
+
+@keyframes countdown {
+    to {
+        stroke-dashoffset: 0;
+    } /* 540 is the beginning of the circle*/
+} /* 0 is a full circle*/
+
+/*************************
+    Puase Play Styles
+**************************/
+.main__pause {
+    margin-top: 15px;
+    border: 2px solid var(--faded-ring);
+    border-radius: 50%;
+    padding: 8px;
+    height: 35px;
+    width: 35px;
+    position: relative;
+}
+
+.main__pause svg {
+    stroke: #fff;
+    cursor: pointer;
+    width: 18px;
+    fill: #fff;
+}
+
+.action_button {
+    position: absolute;
+    /*top: calc(35px / 5);
+    left: calc(2 / 35px);*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#play_button {
+    /*top: calc(35px / 5);
+    left: calc(2 / 35px);*/
+    top: 50%;
+    left: 50%;
+    transform: translate(-40%, -50%);
+}
+
+#pause_button {
+    display: none;
+    /* top: calc(35px / 8);
+    left: calc(35px / 5.333) */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+/*************************
+    Footer Styles
+**************************/
+.footer {
+    margin: 0px 5px 0px 5px;
+}
+
+.footer::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer__round-details {
+    float: left;
+}
+
+/*************************
+    Round Details Styles
+**************************/
+.round-details__rounds {
+    font-size: 10px;
+    font-weight: 500;
+    color: var(--accents);
+    text-align: center;
+}
+
+.round-details__reset {
+    color: rgb(131, 131, 131);
+    text-align: center;
+    font-size: 10px;
+    margin-top: 5px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+.round-details__reset:hover {
+    opacity: .5;
+}
+
+/*************************
+    Sounds Styles
+**************************/
+.sounds {
+    float: right;
+    fill: rgba(227, 225, 222, 0.664);
+    line-height: 2.5
+}
+
+.sounds svg {
+    height: 15px;
+    cursor: pointer;
+    stroke: rgba(227, 225, 222, 0.664);
+}
+
+.sounds svg:hover {
+    opacity: .5
+}
+
+.sounds svg:first-child {
+    width: 12px;
+
+}
+
+.sounds svg:last-child {
+    width: 14px;
+    margin-left: 5px;
+}
+
+
+/* Testing */
+#p {
+    background-color: #fff;
+}
